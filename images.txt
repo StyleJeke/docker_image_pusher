@@ -3,5 +3,4 @@ nginx
 nacos/nacos-server
 mysql
 redis
-elasticsearch
-
+elasticsearch:8.15.1
