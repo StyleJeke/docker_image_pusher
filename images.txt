@@ -4,3 +4,4 @@ nacos/nacos-server
 mysql
 redis
 elasticsearch
+
