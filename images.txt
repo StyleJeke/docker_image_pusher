@@ -5,3 +5,4 @@ mysql
 redis
 elasticsearch:8.15.1
 tomcat
+centos
