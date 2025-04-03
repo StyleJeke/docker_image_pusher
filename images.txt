@@ -5,6 +5,5 @@ mysql
 redis
 elasticsearch:8.15.1
 tomcat
-centos
 tomcat:9.0.58
 tdengine/tdengine:latest
