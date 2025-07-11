@@ -1,6 +1,7 @@
 alpine
 nginx
 nacos/nacos-server
+nacos/nacos-server:2.2.0
 mysql
 redis
 elasticsearch:8.15.1
