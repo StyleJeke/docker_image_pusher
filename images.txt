@@ -9,3 +9,4 @@ tomcat:9.0.58
 tdengine/tdengine:latest
 seataio/seata-server
 apache/rocketmq
+openjdk:8-jre-alpine
