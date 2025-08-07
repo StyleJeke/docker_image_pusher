@@ -10,3 +10,4 @@ tdengine/tdengine:latest
 seataio/seata-server
 apache/rocketmq
 openjdk:8-jre-alpine
+postgres:11.16
