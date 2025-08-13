@@ -12,3 +12,4 @@ apache/rocketmq
 openjdk:8-jre-alpine
 postgres:11.16
 styletang/rocketmq-console-ng
+bladex/sentinel-dashboard
