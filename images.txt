@@ -1,19 +1,230 @@
-alpine
-nginx
-nacos/nacos-server
-mysql
-redis
-elasticsearch:8.15.1
-tomcat
-tomcat:9.0.58
-tdengine/tdengine:latest
-seataio/seata-server
-apache/rocketmq
-postgres:11.16
-styletang/rocketmq-console-ng
-bladex/sentinel-dashboard
-emqx/emqx
-bitnami/zookeeper
-bitnami/kafka
-provectuslabs/kafka-ui
-influxdb:3-enterprise
+# ==================== 基础镜像 ====================
+alpine                                    # 轻量级Linux基础镜像
+busybox                                   # 超轻量工具集
+ubuntu:22.04                              # Ubuntu基础镜像
+
+# ==================== Web服务器 ====================
+nginx                                     # 高性能Web服务器/反向代理
+nginx:alpine                              # Nginx轻量版
+openresty/openresty:alpine                # OpenResty（Nginx+Lua）
+caddy:latest                              # 自动HTTPS的Web服务器
+traefik:latest                            # 现代化反向代理和负载均衡
+
+# ==================== 应用服务器 ====================
+tomcat                                    # Apache Tomcat
+tomcat:9.0.58                            # Tomcat 9.0.58特定版本
+jetty:latest                             # Jetty应用服务器
+eclipse-temurin:17-jre                   # Java运行时环境
+
+# ==================== 注册中心/配置中心 ====================
+nacos/nacos-server                       # Nacos注册配置中心
+consul:latest                            # Consul服务发现
+etcd:latest                              # 分布式KV存储
+zookeeper:latest                         # ZooKeeper协调服务
+bitnami/zookeeper                        # ZooKeeper（Bitnami版）
+apache/zookeeper:latest                  # ZooKeeper官方版
+
+# ==================== 关系型数据库 ====================
+mysql                                    # MySQL数据库
+mysql:8.0                                # MySQL 8.0
+mysql:5.7                                # MySQL 5.7
+mariadb:latest                           # MariaDB数据库
+postgres:11.16                           # PostgreSQL 11.16
+postgres:15                              # PostgreSQL 15
+postgres:16-alpine                       # PostgreSQL 16轻量版
+percona:latest                           # Percona MySQL分支
+cockroachdb/cockroach:latest             # CockroachDB分布式数据库
+
+# ==================== 时序数据库 ====================
+influxdb:2.7                             # InfluxDB 2.x开源版
+influxdb:3-enterprise                    # InfluxDB 3.x企业版
+timescale/timescaledb:latest-pg15        # TimescaleDB（基于PostgreSQL）
+tdengine/tdengine:latest                 # TDengine时序数据库
+questdb/questdb:latest                   # QuestDB时序数据库
+victoriametrics/victoria-metrics:latest  # VictoriaMetrics时序数据库
+
+# ==================== NoSQL数据库 ====================
+redis                                    # Redis缓存数据库
+redis:7-alpine                           # Redis 7轻量版
+redis/redis-stack:latest                 # Redis Stack（含RedisJSON等模块）
+mongo:latest                             # MongoDB文档数据库
+mongo:6.0                                # MongoDB 6.0
+cassandra:latest                         # Cassandra列式数据库
+neo4j:latest                             # Neo4j图数据库
+arangodb:latest                          # ArangoDB多模型数据库
+couchdb:latest                           # CouchDB文档数据库
+
+# ==================== 搜索引擎 ====================
+elasticsearch:8.15.1                     # Elasticsearch 8.15.1
+elasticsearch:7.17.10                    # Elasticsearch 7.x
+opensearchproject/opensearch:latest      # OpenSearch（ES开源分支）
+meilisearch/meilisearch:latest           # MeiliSearch轻量搜索引擎
+typesense/typesense:latest               # Typesense搜索引擎
+manticoresearch/manticore:latest         # Manticore Search
+
+# ==================== 消息队列 ====================
+bitnami/kafka                            # Kafka消息队列（Bitnami版）
+apache/kafka:latest                      # Kafka官方镜像
+confluentinc/cp-kafka:latest             # Confluent Kafka
+apache/rocketmq                          # RocketMQ消息队列
+apache/rocketmq:5.1.4                    # RocketMQ 5.x
+styletang/rocketmq-console-ng            # RocketMQ控制台
+rabbitmq:management                      # RabbitMQ消息队列
+rabbitmq:3-management-alpine             # RabbitMQ轻量版
+apache/pulsar:latest                     # Apache Pulsar
+nats:latest                              # NATS消息系统
+vernemq/vernemq:latest                   # VerneMQ MQTT Broker
+hivemq/hivemq4:latest                    # HiveMQ MQTT Broker
+
+# ==================== MQTT Broker ====================
+emqx/emqx                                # EMQX MQTT Broker
+emqx/emqx:5.4.0                          # EMQX 5.4.0
+eclipse-mosquitto:latest                 # Mosquitto轻量MQTT
+cedalo/streamsheets:latest               # Mosquitto + Web界面
+
+# ==================== 流处理引擎 ====================
+flink:1.18-scala_2.12-java11            # Apache Flink
+flink:1.19-java11                       # Flink最新版
+apache/spark:latest                      # Apache Spark
+apache/storm:latest                      # Apache Storm
+apache/samza:latest                      # Apache Samza
+
+# ==================== 分布式事务 ====================
+seataio/seata-server                     # Seata分布式事务
+dtm-labs/dtm:latest                      # DTM分布式事务管理器
+
+# ==================== 服务网格/API网关 ====================
+kong:latest                              # Kong API网关
+kong/kong-gateway:latest                 # Kong Gateway企业版
+apache/apisix:latest                     # Apache APISIX网关
+tyk/tyk-gateway:latest                   # Tyk API网关
+gravitee/apim-gateway:latest             # Gravitee.io API网关
+envoyproxy/envoy:latest                  # Envoy代理
+istio/pilot:latest                       # Istio服务网格
+linkerd/linkerd2:stable                  # Linkerd服务网格
+
+# ==================== 监控告警 ====================
+prom/prometheus:latest                   # Prometheus监控
+prom/alertmanager:latest                 # AlertManager告警
+grafana/grafana:latest                   # Grafana可视化
+grafana/loki:latest                      # Loki日志聚合
+grafana/tempo:latest                     # Tempo链路追踪
+grafana/mimir:latest                     # Mimir时序数据库
+influxdata/telegraf:latest               # Telegraf数据采集
+netdata/netdata:latest                   # Netdata实时监控
+google/cadvisor:latest                   # cAdvisor容器监控
+prom/node-exporter:latest                # Node Exporter
+prom/blackbox-exporter:latest            # Blackbox Exporter
+oliver006/redis_exporter:latest          # Redis Exporter
+
+# ==================== 日志系统 ====================
+elastic/elasticsearch:8.15.1             # Elasticsearch
+elastic/logstash:8.15.1                  # Logstash
+elastic/kibana:8.15.1                    # Kibana
+elastic/filebeat:8.15.1                  # Filebeat
+fluent/fluentd:latest                    # Fluentd日志收集
+fluentbit/fluent-bit:latest              # Fluent Bit轻量版
+graylog/graylog:latest                   # Graylog日志管理
+
+# ==================== 链路追踪 ====================
+jaegertracing/all-in-one:latest          # Jaeger链路追踪
+openzipkin/zipkin:latest                 # Zipkin链路追踪
+apache/skywalking-oap-server:latest      # SkyWalking OAP
+apache/skywalking-ui:latest              # SkyWalking UI
+grafana/tempo:latest                     # Grafana Tempo
+
+# ==================== 熔断限流 ====================
+bladex/sentinel-dashboard                # Sentinel控制台
+alibaba/sentinel-dashboard:latest        # Sentinel官方版本
+resilience4j/resilience4j:latest         # Resilience4j
+
+# ==================== 任务调度 ====================
+apache/dolphinscheduler-all:latest       # DolphinScheduler
+xxl-job/xxl-job-admin:latest            # XXL-JOB
+quartz-scheduler/quartz:latest           # Quartz
+apache/airflow:latest                    # Apache Airflow
+temporalio/auto-setup:latest             # Temporal工作流引擎
+
+# ==================== DevOps工具 ====================
+jenkins/jenkins:lts                      # Jenkins CI/CD
+gitlab/gitlab-ce:latest                  # GitLab代码仓库
+gitea/gitea:latest                       # Gitea轻量Git服务
+drone/drone:latest                       # Drone CI/CD
+sonarqube:latest                         # SonarQube代码质量
+nexus3:latest                            # Nexus制品库
+harbor/harbor-core:latest                # Harbor镜像仓库
+portainer/portainer-ce:latest            # Portainer容器管理
+rancher/rancher:latest                   # Rancher K8s管理
+
+# ==================== 容器编排 ====================
+kindest/node:latest                      # Kind（K8s in Docker）
+rancher/k3s:latest                       # K3s轻量K8s
+k8s.gcr.io/kube-apiserver:latest        # Kubernetes核心组件
+metallb/controller:latest                # MetalLB负载均衡
+
+# ==================== 对象存储 ====================
+minio/minio:latest                       # MinIO对象存储
+minio/mc:latest                          # MinIO客户端
+seaweedfs/seaweedfs:latest              # SeaweedFS分布式存储
+chrislusf/seaweedfs:latest              # SeaweedFS另一版本
+
+# ==================== 大数据组件 ====================
+apache/hadoop:latest                     # Hadoop
+apache/hive:latest                       # Hive数据仓库
+apache/hbase:latest                      # HBase列式数据库
+prestodb/presto:latest                   # Presto查询引擎
+trinodb/trino:latest                     # Trino（Presto分支）
+apache/druid:latest                      # Apache Druid
+clickhouse/clickhouse-server:latest      # ClickHouse列式数据库
+
+# ==================== 数据同步 ====================
+debezium/connect:latest                  # Debezium CDC
+alibaba/canal-server:latest              # Canal MySQL同步
+airbyte/airbyte:latest                   # Airbyte数据集成
+apache/nifi:latest                       # Apache NiFi数据流
+
+# ==================== 配置管理 ====================
+apollo-configservice:latest              # Apollo配置中心
+spring-cloud-config-server:latest        # Spring Cloud Config
+
+# ==================== 测试工具 ====================
+postman/newman:latest                    # Newman API测试
+grafana/k6:latest                        # k6性能测试
+locustio/locust:latest                   # Locust压测工具
+pact-foundation/pact-broker:latest       # Pact契约测试
+
+# ==================== 安全工具 ====================
+anchore/anchore-engine:latest            # 容器安全扫描
+aquasec/trivy:latest                     # Trivy漏洞扫描
+vault:latest                             # HashiCorp Vault密钥管理
+keycloak/keycloak:latest                 # Keycloak身份认证
+
+# ==================== 管理界面 ====================
+provectuslabs/kafka-ui                   # Kafka UI
+redisinsight/redisinsight:latest        # RedisInsight
+mongo-express:latest                     # Mongo Express
+adminer:latest                           # Adminer数据库管理
+phpmyadmin:latest                        # phpMyAdmin
+pgadmin4:latest                          # pgAdmin4
+dpage/pgadmin4:latest                    # pgAdmin4官方版
+
+# ==================== 文档/知识库 ====================
+nocodb/nocodb:latest                     # NocoDB无代码数据库
+n8nio/n8n:latest                         # n8n工作流自动化
+outline/outline:latest                   # Outline知识库
+appwrite/appwrite:latest                 # Appwrite后端即服务
+supabase/postgres:latest                 # Supabase开源Firebase
+
+# ==================== AI/机器学习 ====================
+jupyter/tensorflow-notebook:latest       # Jupyter+TensorFlow
+pytorch/pytorch:latest                   # PyTorch
+mlflow/mlflow:latest                     # MLflow模型管理
+bentoml/model-server:latest              # BentoML模型服务
+ray-project/ray:latest                   # Ray分布式计算
+
+# ==================== 其他实用工具 ====================
+curlimages/curl:latest                   # cURL工具
+nicolaka/netshoot:latest                 # 网络调试工具集
+alpine/socat:latest                      # socat网络工具
+tianon/true:latest                       # 占位镜像
+busybox:latest                           # BusyBox工具集
