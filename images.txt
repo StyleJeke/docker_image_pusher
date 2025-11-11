@@ -13,3 +13,7 @@ postgres:11.16
 styletang/rocketmq-console-ng
 bladex/sentinel-dashboard
 emqx/emqx
+bitnami/zookeeper
+bitnami/kafka
+provectuslabs/kafka-ui
+influxdb:3-enterprise
