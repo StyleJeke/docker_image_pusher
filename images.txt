@@ -14,7 +14,7 @@ styletang/rocketmq-console-ng
 bladex/sentinel-dashboard
 emqx/emqx
 zookeeper
-bitnami/kafka
+apache/kafka:4.0.1
 influxdb
 flink
 bitnami/prometheus
