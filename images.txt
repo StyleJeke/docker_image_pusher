@@ -12,7 +12,6 @@ jetty:latest
 eclipse-temurin:17-jre
 nacos/nacos-server
 nacos/nacos-server:latest
-consul:latest
 etcd:latest
 zookeeper:latest
 bitnami/zookeeper
