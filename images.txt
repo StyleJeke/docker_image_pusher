@@ -1,4 +1,4 @@
-bitnamicharts/prometheus:sha256-3683ba3f72df231a3089e4afb63d65d7a45a86b829a85787536697f076c544cb
+bitnamicharts/prometheus:2.1.23
 alpine
 nginx
 nacos/nacos-server
