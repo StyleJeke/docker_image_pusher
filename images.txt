@@ -29,4 +29,3 @@ bladex/sentinel-dashboard
 emqx/emqx
 zookeeper
 apache/kafka:4.0.1
-openjdk:21-jdk-slim
