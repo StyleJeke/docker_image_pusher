@@ -1,3 +1,4 @@
+1panel/java:21
 influxdb
 flink
 grafana/grafana
@@ -31,4 +32,3 @@ bladex/sentinel-dashboard
 emqx/emqx
 zookeeper
 apache/kafka:4.0.1
-openresty/openresty:1.31.1.1-2-4-noble
