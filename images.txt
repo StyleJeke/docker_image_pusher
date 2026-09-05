@@ -31,4 +31,4 @@ bladex/sentinel-dashboard
 emqx/emqx
 zookeeper
 apache/kafka:4.0.1
-openresty:1.31.1.1-2-4-noble
+openresty/openresty:1.31.1.1-2-4-noble
