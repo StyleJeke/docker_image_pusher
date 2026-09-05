@@ -15,6 +15,7 @@ alpine
 nginx
 nacos/nacos-server
 mysql
+mysql:8.4.11
 redis
 elasticsearch:8.15.1
 tomcat
