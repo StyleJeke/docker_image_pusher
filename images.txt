@@ -1,4 +1,4 @@
-openresty/openresty:1.31.1.1-2-4-noble
+1panel/openresty:1.31.1.1-2-4-noble
 1panel/java:21
 influxdb
 flink
